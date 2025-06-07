@@ -1,7 +1,9 @@
-# Diplom_2
-вторая часть дипломной работы
+#Diplom_2
+
+Вторая часть дипломной работы
 нужно протестировать
-Создание пользователя:
+Документацаия по API - https://code.s3.yandex.net/qa-automation-engineer/python-full/diploma/api-documentation.pdf?etag=3403196b527ca03259bfd0cb41163a89
+Создание пользователя: 
 создать уникального пользователя;
 создать пользователя, который уже зарегистрирован;
 создать пользователя и не заполнить одно из обязательных полей.
@@ -21,4 +23,10 @@
 Получение заказов конкретного пользователя:
 авторизованный пользователь,
 неавторизованный пользователь.
-Документацаия по API - https://code.s3.yandex.net/qa-automation-engineer/python-full/diploma/api-documentation.pdf?etag=3403196b527ca03259bfd0cb41163a89
+
+
+
+$ pytest --alluredir=./allure_results tests/
+$ pytest --cov=praktikum --cov-report=html`
+
+Яндекс Практикум 2025, Москва, планета Земля
