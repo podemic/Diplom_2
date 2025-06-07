@@ -15,7 +15,7 @@ class TestCreateOrder:
         assert create_order_response.status_code == 200
         assert create_order_response.json()['success'] == True
 
-    # Данный тест не проходит. Это баг.
+    #почему то не проходит! баг?
     @allure.title('Запрос создание заказа без авторизации возвращает код ответа 401')
     def test_create_order_without_authorization(self):
         response = StellarBurgersAPI.create_order(token=None, ingredients=Ingredient.VALID_INGREDIENTS)

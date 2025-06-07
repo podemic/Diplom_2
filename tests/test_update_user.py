@@ -21,6 +21,7 @@ class TestUpdateUser:
 
     @allure.title('Запрос обновления данных пользователя без авторизации возвращает код ответа 401 и message:'
                   ' You should be authorised')
+    #тут почему то работает, а с созданием заказа не хочет. хотя суть одна и та же
     def test_update_user_without_authorization(self, delete_user_after_create):
         register_new_courier_and_return_response()
         token = None
