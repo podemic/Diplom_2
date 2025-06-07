@@ -17,11 +17,10 @@ class TestCreateOrder:
 
     # Данный тест не проходит. Это баг.
     @allure.title('Запрос создание заказа без авторизации возвращает код ответа 401')
-    def test_create_order_without_authorization(self, delete_user_after_create):
-        register_new_courier_and_return_response()
-        token = None
-        create_order_response = StellarBurgersAPI.create_order(token, Ingredient.VALID_INGREDIENTS)
-        assert create_order_response.status_code == 401
+    def test_create_order_without_authorization(self):
+        response = StellarBurgersAPI.create_order(token=None, ingredients=Ingredient.VALID_INGREDIENTS)
+        assert response.status_code == 401, "API должен запрещать создание заказа без авторизации"
+        assert "message" in response.json(), "В ответе должно быть сообщение об ошибке"
 
     @allure.title('Запрос создание заказа без ингредиентов возвращает код ответа 400 и message: '
                   'Ingredient ids must be provided')
